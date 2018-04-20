@@ -1,14 +1,14 @@
 {
   "name": "express-xauth",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Express路由中间件，实现TOKEN令牌式身份认证集成",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "jsonwebtoken": "^8.1.0",
-    "tracer": "^0.8.11"
+    "jsonwebtoken": "^8.2.1",
+    "tracer": "^0.8.12"
   },
   "author": "cheneyxu",
   "license": "ISC"

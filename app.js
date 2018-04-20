@@ -13,7 +13,9 @@ const log = require('tracer').colorConsole({ level: config.log.level })
 // 初始化应用服务
 const app = new express()
 app.use(bodyParser.json())
-app.use(xauth(config.auth, (v) => v))   // 参数1：认证配置，参数2：TOKEN提取规则
+app.use(xauth(config.auth, (v) => v, (req, res) => { // 参数1：认证配置，参数2：TOKEN提取规则，参数3：自定义错误处理
+    res.status(200).send({ err: true, code: '-1', res: `自定义错误信息，TOKEN已过期` })
+}))
 app.use(router)
 
 // ===== 开始：用户认证中间件例子，‘/auth’已经配置白名单，‘/test’路由受保护 =====
